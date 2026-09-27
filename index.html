@@ -284,8 +284,8 @@
           <thead><tr><th>Score Range</th><th>Priority Tier</th><th>Interpretation &amp; Action</th></tr></thead>
           <tbody>
             <tr><td class="tbl-red">$P \ge 80$</td><td><span class="tier tier-p1">Tier P1</span></td><td>Immediate hearing. Undertrial custody or urgent liberty motion requiring same-week listing.</td></tr>
-            <tr><td class="tbl-gold">$60 \le P < 80$</td><td><span class="tier tier-p2">Tier P2</span></td><td>Urgent listing. High pendency or approaching statutory bail threshold.</td></tr>
-            <tr><td class="tbl-dark" style="color:var(--ink-700); font-weight:700;">$P < 60$</td><td><span class="tier tier-p3">Tier P3</span></td><td>Standard cause list. Regular queue for substantive trial proceedings.</td></tr>
+            <tr><td class="tbl-gold">$60 \le P \lt 80$</td><td><span class="tier tier-p2">Tier P2</span></td><td>Urgent listing. High pendency or approaching statutory bail threshold.</td></tr>
+            <tr><td class="tbl-dark" style="color:var(--ink-700); font-weight:700;">$P \lt 60$</td><td><span class="tier tier-p3">Tier P3</span></td><td>Standard cause list. Regular queue for substantive trial proceedings.</td></tr>
           </tbody>
         </table>
       </div>
@@ -331,7 +331,7 @@
       </div>
       <div class="f2col">
         <div class="f-sub"><div class="f-sub-label">Aggravating Score</div><div class="f-sub-body">$$S_{\text{agg}}=2.0\cdot|F_{\text{agg}}|+3.0\cdot\mathbb{I}(\text{repeat})$$</div><div class="f-sub-note">Each aggravating factor ×2.0; repeat offence adds 3.0.</div></div>
-        <div class="f-sub"><div class="f-sub-label">Mitigating Score</div><div class="f-sub-body">$$S_{\text{mit}}=1.5\cdot|F_{\text{mit}}|+2.0\cdot\mathbb{I}(\text{age}\!<\!21\lor\!>\!65)$$</div><div class="f-sub-note">Each mitigating factor ×1.5; age vulnerability adds 2.0.</div></div>
+        <div class="f-sub"><div class="f-sub-label">Mitigating Score</div><div class="f-sub-body">$$S_{\text{mit}}=1.5\cdot|F_{\text{mit}}|+2.0\cdot\mathbb{I}(\text{age}\!\lt\!21\lor\!\gt\!65)$$</div><div class="f-sub-note">Each mitigating factor ×1.5; age vulnerability adds 2.0.</div></div>
       </div>
       <div class="tbl-wrap">
         <table class="tbl">
@@ -339,7 +339,7 @@
           <tbody>
             <tr><td class="tbl-red">$\Delta S > +4.0$</td><td>Upper statutory penalty range; aggravating factors heavily dominate.</td></tr>
             <tr><td class="tbl-gold">$-1.0 \le \Delta S \le +4.0$</td><td>Mid-range balanced penalty; proportionate statutory equilibrium.</td></tr>
-            <tr><td class="tbl-green">$\Delta S < -1.0$</td><td>Lower minimum penalty or reformative probation recommendation.</td></tr>
+            <tr><td class="tbl-green">$\Delta S \lt -1.0$</td><td>Lower minimum penalty or reformative probation recommendation.</td></tr>
           </tbody>
         </table>
       </div>
@@ -997,7 +997,7 @@ class UndertrialAdvisory {
   +Boolean has_capital_offense_bar
   +analyze_undertrial_eligibility()
 }
-RetrievedCandidate <|-- FusedCandidate : Merged via RRF
+RetrievedCandidate &lt;|-- FusedCandidate : Merged via RRF
 LegalReasoningResponse *-- Claim : Contains
 PriorityDocketMatrix ..> UndertrialAdvisory : Incorporates BNSS §479 Rule
           </div>
@@ -1064,6 +1064,6 @@ PriorityDocketMatrix ..> UndertrialAdvisory : Incorporates BNSS §479 Rule
   </div>
 </section>
 
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>

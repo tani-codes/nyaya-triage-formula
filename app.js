@@ -424,6 +424,32 @@ function copyMermaid(id) {
   });
 }
 
+function zoomDiag(id, delta) {
+  const vp = document.getElementById('vp-' + id);
+  const box = vp ? vp.parentElement : document.getElementById(id)?.closest('.uml-diagram-box');
+  const svg = box?.querySelector('svg');
+  if (!svg) return;
+  let scale = parseFloat(svg.dataset.scale || '1');
+  scale = Math.min(2.5, Math.max(0.5, +(scale + delta).toFixed(2)));
+  svg.dataset.scale = scale;
+  svg.style.transform = `scale(${scale})`;
+  svg.style.transformOrigin = 'top center';
+  svg.style.transition = 'transform 0.2s ease';
+  const valEl = document.getElementById(`zoom-${id}`);
+  if (valEl) valEl.textContent = `${Math.round(scale * 100)}%`;
+}
+
+function resetZoomDiag(id) {
+  const vp = document.getElementById('vp-' + id);
+  const box = vp ? vp.parentElement : document.getElementById(id)?.closest('.uml-diagram-box');
+  const svg = box?.querySelector('svg');
+  if (!svg) return;
+  svg.dataset.scale = '1';
+  svg.style.transform = 'none';
+  const valEl = document.getElementById(`zoom-${id}`);
+  if (valEl) valEl.textContent = '100%';
+}
+
 // ─── FLIPBOOK ─────────────────────────────────────────────────
 const TOTAL = 6;
 let curPage = 1;
@@ -887,3 +913,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, 400);
   }
 });
+
+// Window exports for inline HTML event handlers
+Object.assign(window, {
+  switchView,
+  renderAllMermaid,
+  insertCustomSVGs,
+  copyMermaid,
+  zoomDiag,
+  resetZoomDiag,
+  goPage,
+  toggleAuto,
+  calcConf,
+  calcRRF,
+  calcBM25,
+  calcDocket,
+  calcBNSS,
+  calcSeverity,
+  tamperChain,
+  restoreChain,
+  runPipeline
+});
+
