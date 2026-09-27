@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYAYA-TRIAGE — Formula Compendium</title>
+  <meta name="description" content="Mathematical, Algorithmic & Statutory Formula Compendium. SIH 2026 Problem Statement 190.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     APPLICATION BAR
+     ═══════════════════════════════════════════ -->
+<header class="app-bar">
+  <div class="ab-brand">
+    <span class="ab-name">NYAYA-TRIAGE</span>
+    <div class="ab-sep"></div>
+    <span class="ab-sub">Mathematical &amp; Statutory Formula Compendium</span>
+  </div>
+
+  <nav class="ab-nav">
+    <button class="nav-tab active" data-view="flipbook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>Presentation Deck</span>
+    </button>
+    <button class="nav-tab" data-view="lab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+      <span>Formula Simulators</span>
+    </button>
+    <button class="nav-tab" data-view="uml">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/></svg>
+      <span>UML Architecture</span>
+    </button>
+    <button class="nav-tab" data-view="pipeline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>E2E Pipeline</span>
+    </button>
+    <button class="nav-tab" data-view="doc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span>Full Compendium</span>
+    </button>
+  </nav>
+
+  <div class="ab-actions">
+    <button class="btn-outline" id="btn-fs">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Full Screen
+    </button>
+    <button class="btn-gold" onclick="switchView('lab')">Open Simulator Lab →</button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     VIEW: FLIPBOOK / PRESENTATION DECK
+     ═══════════════════════════════════════════ -->
+<main id="flipbook-view" class="view active">
+
+  <div class="fb-bar">
+    <span class="page-label">Page <strong id="page-n">1</strong> of <strong>6</strong></span>
+    <div class="fb-nav">
+      <button class="btn-auto" id="btn-auto">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Auto-Advance
+      </button>
+      <button class="btn-sq" id="btn-prev" disabled>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="btn-sq" id="btn-next">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="thumb-strip">
+    <div class="thumb active" data-page="1"><span class="thumb-n">Page 1</span><span class="thumb-t">System Map &amp; Confidence</span></div>
+    <div class="thumb" data-page="2"><span class="thumb-n">Page 2</span><span class="thumb-t">RRF &amp; Legal BM25</span></div>
+    <div class="thumb" data-page="3"><span class="thumb-n">Page 3</span><span class="thumb-t">Docket Priority &amp; BNSS §479</span></div>
+    <div class="thumb" data-page="4"><span class="thumb-n">Page 4</span><span class="thumb-t">Sentencing &amp; Geofencing</span></div>
+    <div class="thumb" data-page="5"><span class="thumb-n">Page 5</span><span class="thumb-t">Audit Chain &amp; E2E Flow</span></div>
+    <div class="thumb" data-page="6"><span class="thumb-n">Page 6</span><span class="thumb-t">Traceability &amp; Notes</span></div>
+  </div>
+
+  <!-- ───────────────────────────────────────
+       PAGE 1: Cover, System Map, §1 Confidence
+       ─────────────────────────────────────── -->
+  <section class="pdf-page active" id="page-1">
+    <div class="pdf-inner">
+
+      <div class="doc-hdr">
+        <div>
+          <div class="doc-badges">
+            <span class="badge badge-org">AadhaAdhura</span>
+            <span class="badge badge-sih">SIH 2026 · Problem Statement 190</span>
+          </div>
+          <div class="doc-title">NYAYA-TRIAGE</div>
+          <div class="doc-sub">Mathematical, Algorithmic &amp; Statutory Formula Compendium</div>
+        </div>
+        <div class="doc-meta">Compendium Rev. 1.0<br>Smart India Hackathon 2026<br>Internal Technical Reference</div>
+      </div>
+
+      <!-- Cover -->
+      <div class="cover">
+        <div class="cover-h"><em>NYAYA-TRIAGE</em></div>
+        <div class="cover-tag">Mathematical · Algorithmic · Statutory Formula Compendium</div>
+        <div class="cover-rule"></div>
+        <div class="cover-desc">A rigorous technical reference for grounded legal AI, hybrid retrieval, judicial triage, statutory reasoning, zero-trust security, and cryptographic evidence integrity — consolidated for technical presentations, architecture reviews, and project documentation.</div>
+      </div>
+
+      <!-- Four Pillars -->
+      <div class="pillars">
+        <div class="pillar"><span class="pillar-ico">🧠</span><div class="pillar-h">AI Grounding</div><div class="pillar-p">Deterministic confidence from dense retrieval similarity and epistemic claim-status weighting.</div></div>
+        <div class="pillar"><span class="pillar-ico">⚖️</span><div class="pillar-h">Legal Retrieval</div><div class="pillar-p">BM25 Okapi with legal stopword preservation combined with dense vector search via RRF.</div></div>
+        <div class="pillar"><span class="pillar-ico">📋</span><div class="pillar-h">Judicial Triage</div><div class="pillar-p">Docket Priority Index (P1–P3) and statutory bail threshold encoding under BNSS §479.</div></div>
+        <div class="pillar"><span class="pillar-ico">🛡️</span><div class="pillar-h">Security &amp; Evidence</div><div class="pillar-p">Haversine precinct geofencing (1500 m) and sequential SHA-256 audit chain integrity.</div></div>
+      </div>
+
+      <div class="callout c-gold">
+        <span>📌</span>
+        <div><strong>Purpose.</strong> This document consolidates the mathematical, algorithmic, and statutory formulas implemented in NYAYA-TRIAGE. It is intended for technical presentations, project documentation, and architecture reviews. It does not constitute legal advice.</div>
+      </div>
+
+      <!-- §0 System Formula Map -->
+      <div class="s-head">
+        <div class="s-num">0</div>
+        <div class="s-title">System Formula Map</div>
+        <span class="s-code">Architecture Overview</span>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>#</th><th>Component</th><th>Primary Objective</th><th>Key Mechanism</th></tr></thead>
+          <tbody>
+            <tr><td class="tbl-num">1</td><td><strong>Grounded Confidence</strong></td><td>Quantify answer grounding</td><td>Dense retrieval similarity + claim evidence status weighting</td></tr>
+            <tr><td class="tbl-num">2</td><td><strong>Hybrid Retrieval (RRF)</strong></td><td>Combine lexical &amp; semantic search</td><td>Weighted Reciprocal Rank Fusion ($k=60$)</td></tr>
+            <tr><td class="tbl-num">3</td><td><strong>BM25 Legal Search</strong></td><td>Exact legal term matching</td><td>Okapi BM25 with preserved legal tokens</td></tr>
+            <tr><td class="tbl-num">4</td><td><strong>Docket Priority</strong></td><td>Quantify listing urgency</td><td>Capped score combining custody, pendency &amp; urgency flags</td></tr>
+            <tr><td class="tbl-num">5</td><td><strong>BNSS §479 Rule</strong></td><td>Encode detention threshold</td><td>$\theta \in \{1/3,\, 1/2\}$ of maximum statutory penalty</td></tr>
+            <tr><td class="tbl-num">6</td><td><strong>Sentencing Balance</strong></td><td>Structure aggravating/mitigating factors</td><td>Severity difference $\Delta S = S_{\text{agg}} - S_{\text{mit}}$</td></tr>
+            <tr><td class="tbl-num">7</td><td><strong>Station Geofencing</strong></td><td>Restrict sensitive access</td><td>Haversine spherical distance ($d \le 1500\text{ m}$)</td></tr>
+            <tr><td class="tbl-num">8</td><td><strong>Audit Chain</strong></td><td>Protect evidence history</td><td>Sequential SHA-256 with enclave signatures (BSA §63)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §1 Grounded Confidence -->
+      <div class="s-head">
+        <div class="s-num">1</div>
+        <div class="s-title">Grounded Programmatic Confidence Score</div>
+        <span class="s-code">gemini_service.py · L256–292</span>
+      </div>
+
+      <p class="body-p"><strong>Problem addressed.</strong> Large language models generate self-reported confidence values that are arbitrary and untied to evidence. NYAYA-TRIAGE replaces self-assessment with a deterministic calculation grounded in retrieval quality and claim verification status.</p>
+
+      <div class="formula f-gold">
+        <div class="f-body">$$C_{\text{programmatic}} = \operatorname{clamp}\!\left(0.50 \cdot S_{\text{retrieval}} + 0.50 \cdot S_{\text{claims}},\; [0.05,\, 0.99]\right)$$</div>
+        <div class="f-caption">Deterministic programmatic confidence combining average cosine retrieval similarity and claim verification status.</div>
+      </div>
+
+      <div class="f2col">
+        <div class="f-sub">
+          <div class="f-sub-label">1a · Retrieval Similarity ($S_{\text{retrieval}}$)</div>
+          <div class="f-sub-body">$$S_{\text{retrieval}} = \frac{1}{|K|}\sum_{k \in K}\operatorname{Sim}_{\text{dense}}(q,d_k)$$</div>
+          <div class="f-sub-note">Average dense cosine similarity over top $K$ retrieved passages.</div>
+        </div>
+        <div class="f-sub">
+          <div class="f-sub-label">1b · Claim Epistemic Grounding ($S_{\text{claims}}$)</div>
+          <div class="f-sub-body">$$S_{\text{claims}} = \frac{1.0 N_{\text{stated}} + 0.5 N_{\text{inferred}} + 0\cdot N_{\text{insuff}}}{N_{\text{total}}}$$</div>
+          <div class="f-sub-note">Stated (1.0), inferred (0.5), insufficient evidence (0.0).</div>
+        </div>
+      </div>
+
+      <div class="callout c-dark">
+        <span>⚙️</span>
+        <div><strong>Engineering principle.</strong> Confidence is computed from observable system evidence, not accepted from the language model as a self-assessment. Bounding within $[0.05, 0.99]$ prevents presentation of absolute certainty or complete zero confidence.</div>
+      </div>
+
+      <div class="doc-footer">
+        <span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span>
+        <span class="footer-pg">Page 1 of 6</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PAGE 2: §2 RRF · §3 BM25
+       ─────────────────────────────────────── -->
+  <section class="pdf-page" id="page-2">
+    <div class="pdf-inner">
+      <div class="doc-hdr">
+        <div><div class="doc-badges"><span class="badge badge-org">AadhaAdhura</span><span class="badge badge-sih">SIH 2026 · PS 190</span></div><div class="doc-title">Section 2 &amp; 3 — Hybrid Retrieval &amp; BM25</div></div>
+        <div class="doc-meta">Compendium Rev. 1.0</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">2</div>
+        <div class="s-title">Hybrid Legal Retrieval via Reciprocal Rank Fusion</div>
+        <span class="s-code">search_service.py · L256–318</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Pure semantic retrieval misses exact statutory citations (e.g., Section 438 vs. 482 CrPC), while pure keyword retrieval misses conceptually related facts. RRF merges sparse and dense rankings without distorting score scales across heterogeneous retrieval systems.</p>
+      <div class="formula f-dark">
+        <div class="f-body">$$\text{RRF\_Score}(d) = \sum_{m \in M} \frac{w_m}{k + \operatorname{rank}_m(d)}$$</div>
+        <div class="f-caption">Ordinal rank fusion over $M = \{\text{BM25 Okapi},\;\text{Dense Vector}\}$ with smoothing constant $k = 60$ and source weight $w_m$.</div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Parameter</th><th>Value</th><th>Rationale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>$k$</strong> (rank smoothing)</td><td>$60$</td><td>Cormack–Clarke standard; prevents top-rank documents dominating the fused score.</td></tr>
+            <tr><td><strong>$w_{\text{BM25}}$</strong></td><td>Configurable</td><td>Weighted contribution of sparse lexical ranking.</td></tr>
+            <tr><td><strong>$w_{\text{Dense}}$</strong></td><td>Configurable</td><td>Weighted contribution of semantic vector ranking.</td></tr>
+            <tr><td><strong>$M$</strong></td><td>2 sources</td><td>BM25 Okapi + Dense SentenceTransformers.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout c-dark">
+        <span>💡</span>
+        <div><strong>Why rank fusion.</strong> RRF operates on ordinal ranking positions, enabling sparse and dense search to contribute without forcing raw similarity scores onto the same numerical scale.</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">3</div>
+        <div class="s-title">BM25 Okapi with Legal Stopword Preservation</div>
+        <span class="s-code">search_service.py · L97–180</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Standard NLP stopword filters strip critical statutory and case-law operators such as <em>v</em>, <em>vs</em>, <em>sec</em>, and <em>art</em>. The NYAYA-TRIAGE legal tokeniser preserves these tokens during lexical indexing to maintain citation fidelity.</p>
+      <div class="formula f-green">
+        <div class="f-body">$$\text{BM25}(D,Q)=\sum_{t\in Q}\operatorname{IDF}(t)\cdot\frac{f(t,D)\cdot(k_1+1)}{f(t,D)+k_1\!\left(1-b+b\cdot\frac{|D|}{\text{avgdl}}\right)}$$</div>
+        <div class="f-body" style="font-size:0.98rem; margin-top:6px;">$$\operatorname{IDF}(t)=\ln\!\left(\frac{N-n(t)+0.5}{n(t)+0.5}+1\right)$$</div>
+        <div class="f-caption">Parameters: term saturation $k_1=1.5$; length normalisation $b=0.75$; corpus average document length $\text{avgdl}$.</div>
+      </div>
+      <p class="body-p">The following tokens are explicitly <strong>excluded from stopword removal</strong> to preserve legal citation integrity:</p>
+      <div class="chips">
+        <span class="chip">v</span><span class="chip">vs</span><span class="chip">versus</span><span class="chip">section</span><span class="chip">sec</span><span class="chip">article</span><span class="chip">art</span><span class="chip">act</span><span class="chip">state</span><span class="chip">union</span>
+      </div>
+      <div class="callout c-green">
+        <span>⚖️</span>
+        <div><strong>Legal significance.</strong> Retaining these tokens ensures queries such as <em>"anticipatory bail under sec 438 CrPC vs section 482 quashing"</em> retrieve precise legislative and precedential citations.</div>
+      </div>
+
+      <div class="doc-footer"><span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span><span class="footer-pg">Page 2 of 6</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PAGE 3: §4 Docket Priority · §5 BNSS §479
+       ─────────────────────────────────────── -->
+  <section class="pdf-page" id="page-3">
+    <div class="pdf-inner">
+      <div class="doc-hdr">
+        <div><div class="doc-badges"><span class="badge badge-org">AadhaAdhura</span><span class="badge badge-sih">SIH 2026 · PS 190</span></div><div class="doc-title">Section 4 &amp; 5 — Docket Priority &amp; BNSS §479</div></div>
+        <div class="doc-meta">Compendium Rev. 1.0</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">4</div>
+        <div class="s-title">Judicial Docket Priority Index</div>
+        <span class="s-code">ncrb_security_service.py · L671–716</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Judicial docket management lacks a standardised transparency mechanism. The Docket Priority Index reduces listing decisions to an auditable numeric index combining custody duration, case pendency, and urgent motion flags.</p>
+      <div class="formula f-gold">
+        <div class="f-body">$$P_{\text{docket}} = \min\!\left(100,\;S_{\text{custody}}+S_{\text{pendency}}+S_{\text{urgency}}\right)$$</div>
+      </div>
+      <div class="f2col">
+        <div class="f-sub"><div class="f-sub-label">Custody Component (max 40 pts)</div><div class="f-sub-body">$$S_{\text{custody}}=\min\!\left(40,\;\frac{t_{\text{custody}}/T_{\text{max}}}{\theta}\times 40\right)$$</div></div>
+        <div class="f-sub"><div class="f-sub-label">Pendency Component (max 30 pts)</div><div class="f-sub-body">$$S_{\text{pendency}}=\min\!\left(30,\;\frac{t_{\text{pending}}}{24\text{ mo}}\times 30\right)$$</div></div>
+      </div>
+      <div class="f-sub" style="width:55%; margin:0 auto 14px;">
+        <div class="f-sub-label">Urgency Component (max 30 pts)</div>
+        <div class="f-sub-body">$$S_{\text{urgency}}=20\cdot\mathbb{I}(\text{Bail Motion})+10\cdot\mathbb{I}(\text{Stay Prayer})$$</div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Score Range</th><th>Priority Tier</th><th>Interpretation &amp; Action</th></tr></thead>
+          <tbody>
+            <tr><td class="tbl-red">$P \ge 80$</td><td><span class="tier tier-p1">Tier P1</span></td><td>Immediate hearing. Undertrial custody or urgent liberty motion requiring same-week listing.</td></tr>
+            <tr><td class="tbl-gold">$60 \le P < 80$</td><td><span class="tier tier-p2">Tier P2</span></td><td>Urgent listing. High pendency or approaching statutory bail threshold.</td></tr>
+            <tr><td class="tbl-dark" style="color:var(--ink-700); font-weight:700;">$P < 60$</td><td><span class="tier tier-p3">Tier P3</span></td><td>Standard cause list. Regular queue for substantive trial proceedings.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">5</div>
+        <div class="s-title">Statutory Undertrial Detention Threshold — BNSS §479 / CrPC §436A</div>
+        <span class="s-code">judicial_copilot_service.py · L72–138</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Encodes the statutory detention limits for undertrials seeking bail under the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023.</p>
+      <div class="formula f-gold">
+        <div class="f-body">$$\text{Bail Eligibility}\;\iff\;\Bigl[t_{\text{detention}}\ge\theta\cdot T_{\text{max\_penalty}}\Bigr]\;\land\;\neg(\text{Capital or Life Penalty})$$</div>
+        <div class="f-body" style="font-size:1rem; margin-top:8px;">$$\theta=\begin{cases}1/3&\text{First-Time Offender}\\1/2&\text{Prior Conviction / Repeat Offender}\end{cases}$$</div>
+        <div class="f-caption">Threshold fraction $\theta$: first-time undertrials qualify after $1/3$ of maximum penalty; repeat offenders after $1/2$.</div>
+      </div>
+      <div class="callout c-plum">
+        <span>⚠️</span>
+        <div><strong>Boundary of application.</strong> This is an auditable rule-encoding decision-support signal for human judicial review. It does not constitute an autonomous legal determination and must be validated against current statutes and judicial circulars.</div>
+      </div>
+
+      <div class="doc-footer"><span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span><span class="footer-pg">Page 3 of 6</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PAGE 4: §6 Sentencing · §7 Geofencing
+       ─────────────────────────────────────── -->
+  <section class="pdf-page" id="page-4">
+    <div class="pdf-inner">
+      <div class="doc-hdr">
+        <div><div class="doc-badges"><span class="badge badge-org">AadhaAdhura</span><span class="badge badge-sih">SIH 2026 · PS 190</span></div><div class="doc-title">Section 6 &amp; 7 — Sentencing Balance &amp; Geofencing</div></div>
+        <div class="doc-meta">Compendium Rev. 1.0</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">6</div>
+        <div class="s-title">Proportionality &amp; Sentencing Severity Balance</div>
+        <span class="s-code">judicial_copilot_service.py · L240–289</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Computes a structured balance score between aggravating circumstances ($F_{\text{agg}}$) and mitigating factors ($F_{\text{mit}}$), reflecting the proportionality doctrine articulated in <em>Bachan Singh v. State of Punjab</em> (1980) 2 SCC 684.</p>
+      <div class="formula f-plum">
+        <div class="f-body">$$\Delta S_{\text{severity}}=S_{\text{aggravating}}-S_{\text{mitigating}}$$</div>
+      </div>
+      <div class="f2col">
+        <div class="f-sub"><div class="f-sub-label">Aggravating Score</div><div class="f-sub-body">$$S_{\text{agg}}=2.0\cdot|F_{\text{agg}}|+3.0\cdot\mathbb{I}(\text{repeat})$$</div><div class="f-sub-note">Each aggravating factor ×2.0; repeat offence adds 3.0.</div></div>
+        <div class="f-sub"><div class="f-sub-label">Mitigating Score</div><div class="f-sub-body">$$S_{\text{mit}}=1.5\cdot|F_{\text{mit}}|+2.0\cdot\mathbb{I}(\text{age}\!<\!21\lor\!>\!65)$$</div><div class="f-sub-note">Each mitigating factor ×1.5; age vulnerability adds 2.0.</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Severity Balance ($\Delta S$)</th><th>Implementation Output Guidance</th></tr></thead>
+          <tbody>
+            <tr><td class="tbl-red">$\Delta S > +4.0$</td><td>Upper statutory penalty range; aggravating factors heavily dominate.</td></tr>
+            <tr><td class="tbl-gold">$-1.0 \le \Delta S \le +4.0$</td><td>Mid-range balanced penalty; proportionate statutory equilibrium.</td></tr>
+            <tr><td class="tbl-green">$\Delta S < -1.0$</td><td>Lower minimum penalty or reformative probation recommendation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">7</div>
+        <div class="s-title">Zero-Trust Station Geofencing — Haversine Spherical Distance</div>
+        <span class="s-code">ncrb_security_service.py · L44–74</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Enforces location-bound zero-trust access control for sensitive police station records and evidence operations. Valid authentication alone is insufficient without physical presence within the authorised precinct perimeter.</p>
+      <div class="formula f-dark">
+        <div class="f-body">$$d=2R\arcsin\!\left(\sqrt{\sin^2\!\!\left(\tfrac{\Delta\varphi}{2}\right)+\cos\varphi_1\cos\varphi_2\,\sin^2\!\!\left(\tfrac{\Delta\lambda}{2}\right)}\right)$$</div>
+        <div class="f-body" style="font-size:1rem; margin-top:6px;">$$\text{Access Granted}\iff d\le 1500\text{ m},\quad R_{\oplus}=6\,371\,000\text{ m}$$</div>
+        <div class="f-caption">$\varphi$ — latitude; $\lambda$ — longitude; $\Delta$ denotes difference between user and station coordinates.</div>
+      </div>
+      <div class="callout c-dark">
+        <span>🛡️</span>
+        <div><strong>Zero-trust principle.</strong> Valid user authentication alone is insufficient without physical presence within the 1500-metre precinct radius. Sensitive station workflows remain locked when requested from outside authorised perimeter boundaries.</div>
+      </div>
+
+      <div class="doc-footer"><span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span><span class="footer-pg">Page 4 of 6</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PAGE 5: §8 Audit Chain · §9 E2E Flow
+       ─────────────────────────────────────── -->
+  <section class="pdf-page" id="page-5">
+    <div class="pdf-inner">
+      <div class="doc-hdr">
+        <div><div class="doc-badges"><span class="badge badge-org">AadhaAdhura</span><span class="badge badge-sih">SIH 2026 · PS 190</span></div><div class="doc-title">Section 8 &amp; 9 — Audit Chain &amp; E2E Computational Flow</div></div>
+        <div class="doc-meta">Compendium Rev. 1.0</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">8</div>
+        <div class="s-title">Tamper-Proof Audit Chain — Sequential Cryptographic Integrity</div>
+        <span class="s-code">BSA 2023 §63 Compliance</span>
+      </div>
+      <p class="body-p"><strong>Problem addressed.</strong> Successive evidence events must be linked into an immutable cryptographic chain to guarantee electronic record admissibility under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023.</p>
+      <div class="formula f-green">
+        <div class="f-body">$$H_i=\operatorname{SHA-256}\!\left(H_{i-1}\,\|\,\text{Payload}_i\,\|\,\text{Epoch}_i\,\|\,\text{EnclaveSignature}_i\right)$$</div>
+        <div class="f-caption">Cryptographic linkage via previous hash $H_{i-1}$, event payload, epoch timestamp, and hardware security enclave digital signature.</div>
+      </div>
+      <div class="callout c-green">
+        <span>🔗</span>
+        <div><strong>Chain integrity.</strong> Any modification of a historical record invalidates all subsequent hashes, making tampering immediately detectable. Combined with hardware enclave signatures, this satisfies BSA §63 authenticity and integrity requirements.</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">9</div>
+        <div class="s-title">End-to-End Computational Flow</div>
+        <span class="s-code">System Lifecycle</span>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Step</th><th>Stage</th><th>Computational Role</th></tr></thead>
+          <tbody>
+            <tr><td class="tbl-num">01</td><td><strong>Query / Case Input</strong></td><td>User supplies legal query, case facts, FIR details, or bail motion for processing.</td></tr>
+            <tr><td class="tbl-num">02</td><td><strong>Legal Retrieval</strong></td><td>BM25 captures exact legal terminology; dense retrieval captures semantic concepts into Qdrant.</td></tr>
+            <tr><td class="tbl-num">03</td><td><strong>Rank Fusion (RRF)</strong></td><td>Combines candidate rankings into a unified evidence set ($k=60$).</td></tr>
+            <tr><td class="tbl-num">04</td><td><strong>Grounded Reasoning</strong></td><td>Retrieved evidence supports structured Gemini legal reasoning and claim classification.</td></tr>
+            <tr><td class="tbl-num">05</td><td><strong>Programmatic Confidence</strong></td><td>Retrieval and claim signals produce bounded confidence $C_{\text{prog}}\in[0.05,0.99]$.</td></tr>
+            <tr><td class="tbl-num">06</td><td><strong>Rule / Triage Layer</strong></td><td>Statutory rules, docket priority ($P_{\text{docket}}$), and severity balance ($\Delta S$) computed.</td></tr>
+            <tr><td class="tbl-num">07</td><td><strong>Security Controls</strong></td><td>Geofencing ($1500\text{ m}$) and authentication constraints protect sensitive operations.</td></tr>
+            <tr><td class="tbl-num">08</td><td><strong>Audit Integrity</strong></td><td>Events appended to sequential SHA-256 hash chain with enclave signature (BSA §63).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="doc-footer"><span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span><span class="footer-pg">Page 5 of 6</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PAGE 6: Appendix A · Appendix B
+       ─────────────────────────────────────── -->
+  <section class="pdf-page" id="page-6">
+    <div class="pdf-inner">
+      <div class="doc-hdr">
+        <div><div class="doc-badges"><span class="badge badge-org">AadhaAdhura</span><span class="badge badge-sih">SIH 2026 · PS 190</span></div><div class="doc-title">Appendices — Traceability &amp; Technical Notes</div></div>
+        <div class="doc-meta">Compendium Rev. 1.0</div>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">A</div>
+        <div class="s-title">Appendix A — Implementation Traceability Matrix</div>
+        <span class="s-code">Codebase Synchronisation</span>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Module</th><th>Formula / Mechanism</th><th>File · Line Reference</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Gemini Service</strong></td><td>Programmatic confidence ($C_{\text{prog}}$)</td><td><span class="code-i">services/gemini_service.py</span> · L256–292</td></tr>
+            <tr><td><strong>Search Service</strong></td><td>RRF hybrid retrieval ($k=60$)</td><td><span class="code-i">services/search_service.py</span> · L256–318</td></tr>
+            <tr><td><strong>Search Service</strong></td><td>BM25 + legal tokeniser</td><td><span class="code-i">services/search_service.py</span> · L97–180</td></tr>
+            <tr><td><strong>NCRB Security Service</strong></td><td>Docket priority ($P_{\text{docket}}$)</td><td><span class="code-i">services/ncrb_security_service.py</span> · L671–716</td></tr>
+            <tr><td><strong>Judicial Copilot Service</strong></td><td>BNSS §479 rule encoding</td><td><span class="code-i">services/judicial_copilot_service.py</span> · L72–138</td></tr>
+            <tr><td><strong>Judicial Copilot Service</strong></td><td>Severity balance ($\Delta S$)</td><td><span class="code-i">services/judicial_copilot_service.py</span> · L240–289</td></tr>
+            <tr><td><strong>NCRB Security Service</strong></td><td>Haversine geofence ($1500\text{ m}$)</td><td><span class="code-i">services/ncrb_security_service.py</span> · L44–74</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="s-head">
+        <div class="s-num">B</div>
+        <div class="s-title">Appendix B — Technical Notes &amp; Responsible Use Principles</div>
+        <span class="s-code">AI Safety &amp; Governance</span>
+      </div>
+      <div class="principles">
+        <div class="princ" style="border-left-color:var(--gold-500);"><strong>1. Codebase fidelity.</strong> All numerical weights, thresholds, constants, and mappings reflect formulas implemented in the NYAYA-TRIAGE codebase exactly as deployed.</div>
+        <div class="princ" style="border-left-color:var(--ink-500);"><strong>2. Version control.</strong> Formulas are version-controlled alongside implementation code to ensure synchronisation at every release.</div>
+        <div class="princ" style="border-left-color:var(--plum-500);"><strong>3. Statutory evolution.</strong> Rule encodings must be re-evaluated whenever governing statutes, subordinate rules, or binding judicial circulars change.</div>
+        <div class="princ" style="border-left-color:var(--emerald-500);"><strong>4. Decision-support boundary.</strong> Algorithmic outputs function strictly as decision-support signals designed to surface evidence and rationale to competent human legal authorities.</div>
+        <div class="princ" style="border-left-color:var(--ruby-500);"><strong>5. Mathematical scope.</strong> Confidence scores reflect mathematical grounding under the defined metrics and do not constitute legal guarantees, judicial pronouncements, or professional legal advice.</div>
+      </div>
+
+      <div style="margin-top:30px; padding:18px 22px; background:var(--paper); border:1px solid var(--rule); border-radius:var(--radius-lg); text-align:center;">
+        <div style="font-family:var(--font-serif); font-size:1.05rem; font-weight:700; color:var(--gold-700);">NYAYA-TRIAGE</div>
+        <div style="font-size:0.8rem; color:var(--ink-500); margin-top:4px;">Grounded AI · Legal Retrieval · Judicial Workflow · Secure Evidence</div>
+        <div style="font-size:0.72rem; color:var(--ink-300); margin-top:3px;">Smart India Hackathon 2026 · Problem Statement 190 · AadhaAdhura</div>
+      </div>
+
+      <div class="doc-footer"><span class="footer-brand">NYAYA-TRIAGE · SIH 2026 · PS 190</span><span class="footer-pg">Page 6 of 6</span></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     VIEW: FORMULA SIMULATORS
+     ═══════════════════════════════════════════ -->
+<section id="lab-view" class="view">
+  <div class="lab-wrap">
+    <div class="view-hdr">
+      <div class="view-h">Interactive Formula Simulator Laboratory</div>
+      <div class="view-p">Live calculators for all eight mathematical formulas and statutory encodings. Adjust parameters to observe system behaviour in real time.</div>
+    </div>
+    <div class="lab-grid">
+
+      <!-- §1 Confidence -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §1</span><span class="lc-ref">gemini_service.py</span></div>
+        <div class="lc-title">Grounded Programmatic Confidence</div>
+        <div class="lc-desc">$C_{\text{prog}}=\operatorname{clamp}(0.50\cdot S_{\text{ret}}+0.50\cdot S_{\text{claims}},[0.05,0.99])$</div>
+        <div class="sandbox">
+          <div class="ctrl"><div class="ctrl-lbl"><span>Avg. Dense Retrieval Cosine Sim. ($S_{\text{ret}}$)</span><span class="ctrl-v" id="v-sim">0.78</span></div><input type="range" id="s-sim" min="0" max="1" step="0.01" value="0.78"></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+            <div class="ctrl"><div class="ctrl-lbl"><span>Stated (1.0)</span><span class="ctrl-v" id="v-stated">4</span></div><input type="range" id="s-stated" min="0" max="10" step="1" value="4"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Inferred (0.5)</span><span class="ctrl-v" id="v-inferred">2</span></div><input type="range" id="s-inferred" min="0" max="10" step="1" value="2"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Insufficient (0)</span><span class="ctrl-v" id="v-insuff">0</span></div><input type="range" id="s-insuff" min="0" max="10" step="1" value="0"></div>
+          </div>
+          <div class="result r-gold">
+            <div><div class="r-label">Programmatic Confidence</div><div class="r-status t-green" id="r-conf-badge">HIGH GROUNDING · VERIFIED</div><div class="r-sub" id="r-conf-sub">S_ret: 0.78 | S_claims: 0.83</div></div>
+            <div class="r-val" id="r-conf">80.7%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §2 RRF -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §2</span><span class="lc-ref">search_service.py</span></div>
+        <div class="lc-title">Reciprocal Rank Fusion (RRF)</div>
+        <div class="lc-desc">$\text{RRF}(d)=\sum_m w_m/(k+\operatorname{rank}_m(d)),\; k=60$</div>
+        <div class="sandbox">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="ctrl"><div class="ctrl-lbl"><span>BM25 Rank</span><span class="ctrl-v" id="v-bm25-rank">#3</span></div><input type="range" id="s-bm25-rank" min="1" max="50" step="1" value="3"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Dense Rank</span><span class="ctrl-v" id="v-dense-rank">#5</span></div><input type="range" id="s-dense-rank" min="1" max="50" step="1" value="5"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Weight $w_{\text{BM25}}$</span><span class="ctrl-v" id="v-w-bm25">1.0×</span></div><input type="range" id="s-w-bm25" min="0.5" max="2.0" step="0.1" value="1.0"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Weight $w_{\text{Dense}}$</span><span class="ctrl-v" id="v-w-dense">1.0×</span></div><input type="range" id="s-w-dense" min="0.5" max="2.0" step="0.1" value="1.0"></div>
+          </div>
+          <div class="result r-dark">
+            <div><div class="r-label">Fused RRF Score</div><div class="r-sub" id="r-rrf-sub">BM25: 0.01587 + Dense: 0.01538</div></div>
+            <div class="r-val t-dark" id="r-rrf">0.03125</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §3 BM25 -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §3</span><span class="lc-ref">search_service.py</span></div>
+        <div class="lc-title">BM25 Legal Token Inspector</div>
+        <div class="lc-desc">Live tokeniser highlighting preserved legal citation terms.</div>
+        <div class="sandbox">
+          <div class="ctrl"><div class="ctrl-lbl"><span>Legal Search Query</span></div><input type="text" class="txt-in" id="bm25-input" value="anticipatory bail under sec 438 crpc vs section 482 quashing"></div>
+          <div><div style="font-size:0.7rem;font-weight:700;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Tokeniser Output</div><div class="tok-box" id="bm25-preview"></div></div>
+          <div class="result r-green">
+            <div><div class="r-label">Legal Term Fidelity</div><div class="r-status t-green" id="bm25-count">4 Preserved Terms Detected</div></div>
+            <div style="font-family:var(--font-mono);font-size:0.82rem;font-weight:700;color:var(--emerald-900);">k₁=1.5 · b=0.75</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §4 Docket Priority -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §4</span><span class="lc-ref">ncrb_security_service.py</span></div>
+        <div class="lc-title">Judicial Docket Priority Index</div>
+        <div class="lc-desc">$P_{\text{docket}}=\min(100,\;S_{\text{custody}}+S_{\text{pendency}}+S_{\text{urgency}})$</div>
+        <div class="sandbox">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="ctrl"><div class="ctrl-lbl"><span>Custody Duration</span><span class="ctrl-v" id="v-cust">14 mo</span></div><input type="range" id="s-cust" min="0" max="60" step="1" value="14"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Max Penalty</span><span class="ctrl-v" id="v-maxp">36 mo</span></div><input type="range" id="s-maxp" min="12" max="120" step="6" value="36"></div>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl"><span>Case Pendency</span><span class="ctrl-v" id="v-pend">18 mo</span></div><input type="range" id="s-pend" min="0" max="60" step="1" value="18"></div>
+          <div class="check-row">
+            <label><input type="radio" name="dk-off" id="dk-first" checked> First-Time ($\theta=1/3$)</label>
+            <label><input type="radio" name="dk-off" id="dk-repeat"> Repeat ($\theta=1/2$)</label>
+          </div>
+          <div class="check-row">
+            <label><input type="checkbox" id="dk-bail" checked> Bail Motion (+20)</label>
+            <label><input type="checkbox" id="dk-stay"> Stay Application (+10)</label>
+          </div>
+          <div class="result r-gold">
+            <div><div class="r-label">Priority Tier</div><div class="r-status t-red" id="r-dk-tier">P1 · IMMEDIATE HEARING</div><div class="r-sub" id="r-dk-sub">Custody: 40 + Pendency: 22.5 + Urgency: 20</div></div>
+            <div class="r-val" id="r-dk">82</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §5 BNSS -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §5</span><span class="lc-ref">judicial_copilot_service.py</span></div>
+        <div class="lc-title">BNSS §479 Statutory Bail Threshold</div>
+        <div class="lc-desc">$t_{\text{det}}\ge\theta\cdot T_{\text{max}},\;\theta\in\{1/3,1/2\}$</div>
+        <div class="sandbox">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="ctrl"><div class="ctrl-lbl"><span>Served Undertrial</span><span class="ctrl-v" id="v-served">16 mo</span></div><input type="range" id="s-served" min="0" max="60" step="1" value="16"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Statutory Maximum</span><span class="ctrl-v" id="v-smax">36 mo</span></div><input type="range" id="s-smax" min="6" max="84" step="6" value="36"></div>
+          </div>
+          <div class="check-row">
+            <label><input type="radio" name="bn-type" id="bn-first" checked> First-Time (1/3)</label>
+            <label><input type="radio" name="bn-type" id="bn-repeat"> Repeat (1/2)</label>
+            <label style="color:var(--ruby-900);"><input type="checkbox" id="bn-capital"> Capital/Life</label>
+          </div>
+          <div><div style="font-size:0.7rem;color:var(--ink-300);margin-bottom:3px;">Served vs. Statutory Threshold</div><div class="pb-wrap"><div class="pb-fill" id="bn-bar" style="width:44%;"></div><div class="pb-mark" id="bn-mark" style="left:33.33%;"></div></div></div>
+          <div class="result r-green" id="bn-panel">
+            <div><div class="r-label">Statutory Finding</div><div class="r-status t-green" id="r-bn-status">ELIGIBLE FOR STATUTORY BAIL</div><div class="r-sub" id="r-bn-sub">Served 16 mo ≥ Threshold 12 mo</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §6 Sentencing -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §6</span><span class="lc-ref">judicial_copilot_service.py</span></div>
+        <div class="lc-title">Sentencing Severity Balance</div>
+        <div class="lc-desc">$\Delta S=S_{\text{agg}}-S_{\text{mit}}$ · Bachan Singh Doctrine</div>
+        <div class="sandbox">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="ctrl"><div class="ctrl-lbl"><span>Aggravating Factors (×2.0)</span><span class="ctrl-v" id="v-agg">2</span></div><input type="range" id="s-agg" min="0" max="6" step="1" value="2"></div>
+            <div class="ctrl"><div class="ctrl-lbl"><span>Mitigating Factors (×1.5)</span><span class="ctrl-v" id="v-mit">3</span></div><input type="range" id="s-mit" min="0" max="6" step="1" value="3"></div>
+          </div>
+          <div class="check-row">
+            <label><input type="checkbox" id="s-repeat"> Prior Conviction (+3.0 agg.)</label>
+            <label><input type="checkbox" id="s-vuln" checked> Age &lt;21 / &gt;65 (+2.0 mit.)</label>
+          </div>
+          <div class="scale-wrap">
+            <div style="position:relative;width:190px;">
+              <div class="scale-beam" id="scale-beam"></div>
+              <div class="scale-pans"><div class="scale-pan"><div class="scale-str"></div><div class="scale-plt"></div></div><div class="scale-pan"><div class="scale-str"></div><div class="scale-plt"></div></div></div>
+            </div>
+            <div class="scale-ful"></div>
+          </div>
+          <div class="result r-gold">
+            <div><div class="r-label">Severity Output</div><div class="r-status" id="r-sev-tier">LOWER MINIMUM / REFORMATIVE</div><div class="r-sub" id="r-sev-sub">S_agg: 4.0 | S_mit: 6.5</div></div>
+            <div class="r-val" id="r-delta-s">−2.5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §7 Geofencing -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §7</span><span class="lc-ref">ncrb_security_service.py</span></div>
+        <div class="lc-title">Haversine Geofence Simulator</div>
+        <div class="lc-desc">Click on the radar grid to reposition the user. Station precinct radius: 1500 m.</div>
+        <div class="sandbox">
+          <div class="radar-wrap"><canvas id="radar-canvas"></canvas></div>
+          <div class="result r-dark" id="geo-panel">
+            <div><div class="r-label">Perimeter Status</div><div class="r-status t-green" id="r-geo-status">ACCESS GRANTED · WITHIN PRECINCT</div></div>
+            <div class="r-val t-dark" id="r-geo-dist">— m</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §8 Audit Chain -->
+      <div class="lab-card">
+        <div class="lc-hdr"><span class="lc-tag">Formula §8</span><span class="lc-ref">BSA 2023 §63</span></div>
+        <div class="lc-title">SHA-256 Cryptographic Audit Chain</div>
+        <div class="lc-desc">$H_i=\text{SHA-256}(H_{i-1}\|\text{Payload}_i\|\text{Epoch}_i\|\text{Sig}_i)$</div>
+        <div class="sandbox">
+          <div class="chain-btns">
+            <button class="btn-sm b-red" id="btn-tamper">Tamper Block #2</button>
+            <button class="btn-sm b-green" id="btn-restore">Restore Chain</button>
+          </div>
+          <div class="chain" id="chain"></div>
+          <div class="result r-green" id="audit-panel">
+            <div><div class="r-label">BSA §63 Admissibility</div><div class="r-status t-green" id="r-audit">ALL BLOCKS VERIFIED · COMPLIANT</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VIEW: E2E PIPELINE
+     ═══════════════════════════════════════════ -->
+<section id="pipeline-view" class="view">
+  <div class="pipe-wrap">
+    <div class="view-hdr">
+      <div class="view-h">End-to-End Computational Flow Pipeline</div>
+      <div class="view-p">Step-by-step trace of a legal case query through all eight NYAYA-TRIAGE processing stages.</div>
+    </div>
+    <button class="btn-run" id="btn-run">
+      <span>▶ Run Simulated Legal Case Flow</span>
+    </button>
+    <div class="pipe-nodes">
+      <div class="pipe-node"><div class="pn-num">01</div><div class="pn-body"><h4>Query / Case Input Ingestion</h4><p>User supplies legal query, case facts, FIR details, or bail motion for processing.</p></div><div class="pn-meta"><span class="pn-badge">Input Ingestion</span><span class="pn-file">Stage 1 of 8</span></div></div>
+      <div class="pipe-node"><div class="pn-num">02</div><div class="pn-body"><h4>Dual Legal Retrieval</h4><p>BM25 indexes preserved legal terms; dense retrieval embeds semantic concepts into Qdrant vector store.</p></div><div class="pn-meta"><span class="pn-badge">BM25 + Dense</span><span class="pn-file">search_service.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">03</div><div class="pn-body"><h4>Reciprocal Rank Fusion</h4><p>Merges lexical and vector rankings into a unified evidence set with smoothing constant $k=60$.</p></div><div class="pn-meta"><span class="pn-badge">RRF (k=60)</span><span class="pn-file">search_service.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">04</div><div class="pn-body"><h4>Grounded Legal Reasoning</h4><p>Retrieved statutory provisions and precedents ground Gemini structured legal reasoning and claim classification.</p></div><div class="pn-meta"><span class="pn-badge">Structured LLM</span><span class="pn-file">gemini_service.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">05</div><div class="pn-body"><h4>Programmatic Confidence Calculation</h4><p>Quantifies answer grounding from retrieval similarity and claim verification; clamped to $[0.05, 0.99]$.</p></div><div class="pn-meta"><span class="pn-badge">C_programmatic</span><span class="pn-file">gemini_service.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">06</div><div class="pn-body"><h4>Statutory Rules &amp; Docket Triage</h4><p>Evaluates BNSS §479 detention thresholds, docket priority ($P_{\text{docket}}$), and sentencing severity balance ($\Delta S$).</p></div><div class="pn-meta"><span class="pn-badge">BNSS §479 · Docket</span><span class="pn-file">judicial_copilot.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">07</div><div class="pn-body"><h4>Zero-Trust Geospatial Security</h4><p>Validates Haversine distance $d \le 1500\text{ m}$ against authorised precinct coordinates before sensitive data unlocks.</p></div><div class="pn-meta"><span class="pn-badge">Haversine 1500 m</span><span class="pn-file">ncrb_security_service.py</span></div></div>
+      <div class="pipe-node"><div class="pn-num">08</div><div class="pn-body"><h4>Sequential Audit Hash Integrity</h4><p>Appends execution event to SHA-256 hash chain with enclave signature ensuring BSA §63 admissibility.</p></div><div class="pn-meta"><span class="pn-badge">SHA-256 · BSA §63</span><span class="pn-file">Audit Enclave</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VIEW: UML ARCHITECTURE & SYSTEM MODELS
+     ═══════════════════════════════════════════ -->
+<section id="uml-view" class="view">
+  <div class="uml-wrap">
+
+    <div class="view-hdr">
+      <div class="view-badges">
+        <span class="badge badge-org">Engineering Specification</span>
+        <span class="badge badge-sih">UML 2.5 Standards</span>
+      </div>
+      <div class="view-h">NYAYA-TRIAGE UML System Architecture</div>
+      <div class="view-p">Formal component diagrams, sequence execution flows, domain class hierarchies, and mathematical invariants powering the platform.</div>
+      <div class="uml-hdr-actions">
+        <button class="btn-outline" onclick="window.print()">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print UML Sheets (PDF)
+        </button>
+        <button class="btn-outline" onclick="renderAllMermaid()">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Re-render Diagrams
+        </button>
+      </div>
+    </div>
+
+    <!-- ── DIAGRAM 1: High-Level Component & Package Architecture ── -->
+    <div class="uml-card">
+      <div class="uml-card-hdr">
+        <div class="uml-card-meta">
+          <span class="uml-badge">Diagram §1</span>
+          <h3 class="uml-title">High-Level UML Package &amp; Component Architecture</h3>
+        </div>
+        <div class="uml-actions">
+          <div class="zoom-toolbar">
+            <span class="zoom-title">Zoom:</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-component', -0.15)" title="Zoom Out">−</button>
+            <span class="zoom-val" id="zoom-m-component">100%</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-component', 0.15)" title="Zoom In">+</button>
+            <button class="btn-zoom" onclick="resetZoomDiag('m-component')" title="Reset Zoom">100%</button>
+          </div>
+          <button class="btn-sm b-gold" onclick="copyMermaid('m-component')">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Source
+          </button>
+        </div>
+      </div>
+      <p class="uml-sub">Layered topology detailing Authorized Role Personas, Client Presentation Layer (React 19 + Vite), Zero-Trust FastAPI Gateway, Domain Engines (Hybrid RRF, Grounding Core, Judicial Copilot, Malkhana Cryptography), and Distributed Storage (MongoDB, Qdrant Cloud, SQLite, IndianKanoon).</p>
+      
+      <div class="uml-diagram-box">
+        <div class="mermaid-viewport" id="vp-m-component">
+          <div class="mermaid" id="m-component">
+graph TB
+subgraph ClientLayer ["Client Presentation Layer (React 19 + Vite 8 + Tailwind 4)"]
+direction TB
+subgraph Personas ["Authorized Role Personas"]
+P_Citizen["Citizen / Litigant"]
+P_Police["Police & IO (Station Core)"]
+P_Lawyer["Advocate / Legal Researcher"]
+P_Judge["Judicial Officer / Magistrate"]
+P_Admin["National System Administrator"]
+end
+subgraph UIModules ["Application Views & Tools"]
+UI_Landing["LandingPage (3D Lady Justice Canvas)"]
+UI_BNS["IPCBNSMapper (/ipc-bns)"]
+UI_Search["SearchPage (/search - Hybrid Precedents)"]
+UI_Chat["FreeChatPage (/chat - Grounded AI)"]
+UI_Plain["PlainSummarizer (/plain-summarizer)"]
+UI_Bench["Judicial Bench & Docket Matrix (/dashboard)"]
+UI_Malkhana["Malkhana & BSA 63 Ledger (/dashboard)"]
+UI_Teleprompter["Pitch Teleprompter Popup (520x340 OBS Window)"]
+end
+subgraph ClientAuth ["Client Auth & State Engine"]
+SupabaseClient["@supabase/supabase-js (ES256 JWKS)"]
+AppContext["AppContext (Role RBAC & Token Cache)"]
+PitchBridge["Cross-Window Bridge (window.__nyayaPitchBridge)"]
+end
+end
+subgraph ApiLayer ["Backend Controller Layer (FastAPI / Uvicorn - Dual Stack IPv4/IPv6 :8000)"]
+direction TB
+subgraph Endpoints ["REST API Endpoints"]
+EP_Auth["/api/auth/* (OTP, Token Verification, JWKS)"]
+EP_BNS["/api/ipc-bns* (Lookup, Stats, All Mappings)"]
+EP_Search["/api/cases/* (Search, Compare, Browse 680 Precedents)"]
+EP_Reason["/api/reason & /api/chat/query (Legal Reasoning)"]
+EP_Simplify["/api/explain-simply (8th-Grade Notice Simplifier)"]
+EP_Judge["/api/judge/* (Docket Matrix, Contradiction Spotter)"]
+EP_Police["/api/police/* (Malkhana, BSA 63 Certs, V1-Vn Delta)"]
+EP_Vault["/api/vault/* & /api/crypto/* (PSI Matcher, Redaction)"]
+EP_Health["/api/health & /api/admin/* (Dependency Telemetry)"]
+end
+subgraph SecurityFilter ["Zero-Trust Security & RBAC Middleware"]
+ABAC["Attribute-Based Access Control (Role & CIS ID Guard)"]
+Geofence["Haversine Geofence Validator (1500m Station Perimeter)"]
+CORS["Dual-Stack CORS & Origin Validator"]
+end
+end
+subgraph ServiceLayer ["Domain Services & Algorithmic Engines"]
+direction TB
+subgraph MappingEngine ["Statutory Transition Engine"]
+SRV_Mapper["ipc_bns_mapper.py (580 Sections, 89.5% Coverage)"]
+end
+subgraph RetrievalEngine ["Hybrid Precedent Retrieval Core"]
+SRV_BM25["BM25Okapi Lexical Index (Legal Stopword Preserver)"]
+SRV_RRF["Reciprocal Rank Fusion RRF Engine (k=60)"]
+SRV_Embeddings["SentenceTransformers (all-MiniLM-L6-v2, 384-dim)"]
+end
+subgraph ReasoningEngine ["Anti-Hallucination Grounding Core"]
+SRV_Gemini["gemini_service.py (Gemini 3.5 Flash Reasoning)"]
+SRV_Confidence["Programmatic Confidence Calculator: C = 0.5 Sim + 0.5 Claims"]
+SRV_Fallback["Deterministic Grounded Synthesis (Zero-LLM Mode)"]
+end
+subgraph JudicialEngine ["Judicial Decision Support"]
+SRV_Docket["JudicialDocketService (0-100 Priority Matrix)"]
+SRV_Undertrial["BNSS §479 Undertrial Detention Advisor (1/3rd & 1/2 Rules)"]
+SRV_Sentencing["Sentencing Proportionality Matrix (Bachan Singh Doctrine)"]
+end
+subgraph CryptographyEngine ["Zero-Trust & Evidence Integrity"]
+SRV_Crypto["crypto_service.py (Diffie-Hellman Blind PSI)"]
+SRV_Audit["Immutable Audit Ledger (SHA-256 Sequential Hash Chain)"]
+SRV_BSA63["BSA Section 63(4) Digital Admissibility Signer"]
+end
+end
+subgraph DataLayer ["Data & Persistence Layer"]
+direction TB
+DB_Mongo[("MongoDB nyaya_triage<br>• 680 Multi-Era Precedents<br>• 580 Statutory Mappings<br>• Malkhana Evidence Records<br>• Section 63 BSA Certificates")]
+DB_Qdrant[("Qdrant Cloud Vector DB<br>• india_code (150 chunks)<br>• constitution (500 chunks)<br>• precedents (78 vectors)<br>• Cosine Metric")]
+DB_SQLite[("Local SQLite Database<br>• User Query Audit Log<br>• Session Chat History<br>• Judicial Orders")]
+EXT_Kanoon[("External Judicial Web Corpus<br>• IndianKanoon.org (Live Trust: 0.85)<br>• Supreme Court of India Gazette")]
+end
+Personas --> UIModules
+UIModules --> ClientAuth
+ClientAuth --> SecurityFilter
+UI_Teleprompter -.->|"Cross-Window Bridge"| PitchBridge
+PitchBridge -.->|"Simulated Keystrokes & Nav"| UIModules
+SecurityFilter --> Endpoints
+EP_BNS --> SRV_Mapper
+EP_Search --> SRV_RRF
+EP_Reason --> SRV_Gemini
+EP_Simplify --> SRV_Gemini
+EP_Judge --> SRV_Docket
+EP_Judge --> SRV_Undertrial
+EP_Judge --> SRV_Sentencing
+EP_Police --> SRV_BSA63
+EP_Vault --> SRV_Crypto
+SRV_RRF --> SRV_BM25
+SRV_RRF --> SRV_Embeddings
+SRV_RRF --> SRV_Gemini
+SRV_Gemini --> SRV_Confidence
+SRV_Gemini -.->|"On Model Timeout"| SRV_Fallback
+SRV_Docket --> SRV_Undertrial
+SRV_Mapper --> DB_Mongo
+SRV_BM25 --> DB_Mongo
+SRV_Embeddings --> DB_Qdrant
+SRV_BSA63 --> DB_Mongo
+SRV_BSA63 --> SRV_Audit
+SRV_Audit --> DB_Mongo
+SRV_Gemini --> DB_SQLite
+SRV_Gemini -.->|"Web Fallback Citations"| EXT_Kanoon
+          </div>
+        </div>
+      </div>
+
+      <div class="uml-spec-grid">
+        <div class="uml-spec-box">
+          <div class="uml-spec-title">1. Presentation &amp; Persona RBAC</div>
+          <p>Multi-role authorization segregates Litigants, Station Police, Advocates, and Magistrates. Features bidirectional cross-window telemetry (520×340 popup teleprompter) for live bench demonstrations.</p>
+        </div>
+        <div class="uml-spec-box">
+          <div class="uml-spec-title">2. Zero-Trust Security Gateway</div>
+          <p>Every ingress request passes ABAC verification, cryptographic ES256 JWKS tokens, and 1500m Haversine precinct geofence validation before accessing sensitive docket databases.</p>
+        </div>
+        <div class="uml-spec-box">
+          <div class="uml-spec-title">3. Hybrid Retrieval &amp; Grounding</div>
+          <p>Reciprocal Rank Fusion ($k=60$) seamlessly synthesizes Okapi BM25 sparse lexical tokens and 384-dim Qdrant dense vector embeddings with deterministic fallback safety.</p>
+        </div>
+        <div class="uml-spec-box">
+          <div class="uml-spec-title">4. Evidence Integrity Chain</div>
+          <p>Malkhana evidence entries and judicial log updates are appended sequentially to a SHA-256 cryptographic chain generating BSA §63(4) admissible certificates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DIAGRAM 2: Sequence Diagram ── -->
+    <div class="uml-card">
+      <div class="uml-card-hdr">
+        <div class="uml-card-meta">
+          <span class="uml-badge">Diagram §2</span>
+          <h3 class="uml-title">Sequence Diagram: Hybrid Retrieval &amp; Grounded Legal Reasoning</h3>
+        </div>
+        <div class="uml-actions">
+          <div class="zoom-toolbar">
+            <span class="zoom-title">Zoom:</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-sequence', -0.15)" title="Zoom Out">−</button>
+            <span class="zoom-val" id="zoom-m-sequence">100%</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-sequence', 0.15)" title="Zoom In">+</button>
+            <button class="btn-zoom" onclick="resetZoomDiag('m-sequence')" title="Reset Zoom">100%</button>
+          </div>
+          <button class="btn-sm b-gold" onclick="copyMermaid('m-sequence')">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Source
+          </button>
+        </div>
+      </div>
+      <p class="uml-sub">Synchronous client call flow through parallel BM25/Qdrant retrieval, RRF ranking, MongoDB metadata hydration, Gemini cross-encoder listwise reranking, grounded reasoning synthesis, and deterministic programmatic confidence scoring.</p>
+
+      <div class="uml-diagram-box">
+        <div class="mermaid-viewport" id="vp-m-sequence">
+          <div class="mermaid" id="m-sequence">
+sequenceDiagram
+autonumber
+actor User as Advocate / Judge
+participant UI as React UI (Search / Chat)
+participant API as FastAPI Gateway
+participant RRF as Hybrid Search (RRF Engine)
+participant BM25 as In-Memory BM25 Index
+participant Qdrant as Qdrant Vector Cloud
+participant Gemini as Google Gemini 3.5 Flash
+participant Calc as Confidence Calculator
+participant Mongo as MongoDB (680 Precedents)
+
+User->>UI: Types query ("bail under Section 483 BNSS")
+UI->>API: POST /api/cases/search or /api/chat/query
+par Sparse Lexical Retrieval
+  API->>BM25: Query legal tokens (preserve 'section', 'bnss', 'bail')
+  BM25-->>RRF: Return Top-50 Candidates (BM25 Scores)
+and Dense Semantic Retrieval
+  API->>Qdrant: Cosine vector search (384-dim SentenceTransformers)
+  Qdrant-->>RRF: Return Top-50 Vector Chunks (Cosine Scores)
+end
+RRF->>RRF: Compute Reciprocal Rank Fusion: RRF(d) = sum[ w / (60 + rank) ]
+RRF->>Mongo: Resolve full metadata & precedent text for top-10 fused candidates
+Mongo-->>RRF: Return precedent headnotes, citations & court data
+RRF->>Gemini: Listwise cross-encoder rerank prompt
+Gemini-->>RRF: Return ordered candidate rankings [1, 4, 2, 7...]
+RRF->>Gemini: Synthesize legal reasoning strictly over grounded chunks
+Gemini-->>API: Structured response (claims: stated / inferred / insufficient)
+API->>Calc: calculate_programmatic_confidence(response, chunks)
+Note over Calc: C = clamp(0.50 * avg(Sim) + 0.50 * (stated*1.0 + inferred*0.5)/total)
+Calc-->>API: Computed Grounded Confidence: 0.94 (Grounded)
+API-->>UI: JSON Payload (Analysis + Indian Kanoon Citations + Confidence + Mapped BNS Sections)
+UI-->>User: Interactive reasoning cards rendered with verified badges
+          </div>
+        </div>
+      </div>
+
+      <div class="callout c-gold">
+        <strong>Execution Invariant:</strong> The reasoning synthesis is guaranteed deterministic. If Google Gemini API encounters latency spikes or network timeouts, the pipeline transitions immediately to <code>SRV_Fallback</code> (Deterministic Grounded Synthesis) without hallucinating unverified statutory text.
+      </div>
+    </div>
+
+    <!-- ── DIAGRAM 3: Domain Class Diagram ── -->
+    <div class="uml-card">
+      <div class="uml-card-hdr">
+        <div class="uml-card-meta">
+          <span class="uml-badge">Diagram §3</span>
+          <h3 class="uml-title">Core Domain Class Diagram &amp; Scoring Systems</h3>
+        </div>
+        <div class="uml-actions">
+          <div class="zoom-toolbar">
+            <span class="zoom-title">Zoom:</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-class', -0.15)" title="Zoom Out">−</button>
+            <span class="zoom-val" id="zoom-m-class">100%</span>
+            <button class="btn-zoom" onclick="zoomDiag('m-class', 0.15)" title="Zoom In">+</button>
+            <button class="btn-zoom" onclick="resetZoomDiag('m-class')" title="Reset Zoom">100%</button>
+          </div>
+          <button class="btn-sm b-gold" onclick="copyMermaid('m-class')">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Source
+          </button>
+        </div>
+      </div>
+      <p class="uml-sub">Object-oriented schema modeling candidates, claim-level grounded reasoning entities, docket priority matrices, and statutory undertrial advisory engines.</p>
+
+      <div class="uml-diagram-box">
+        <div class="mermaid-viewport" id="vp-m-class">
+          <div class="mermaid" id="m-class">
+classDiagram
+class RetrievedCandidate {
+  +String mongo_id
+  +String text
+  +String title
+  +Float score
+  +String source_system
+  +String source_index
+  +Dict metadata
+}
+class FusedCandidate {
+  +String mongo_id
+  +String text
+  +String title
+  +Float rrf_score
+  +Int bm25_rank
+  +Int faiss_rank
+  +Float faiss_score
+  +Float bm25_score
+  +String source_type
+}
+class LegalReasoningResponse {
+  +String summary
+  +List~Claim~ claims
+  +List~StatuteReference~ statutes
+  +List~PrecedentCitation~ precedents
+  +Float confidence
+  +String reasoning_mode
+}
+class Claim {
+  +String text
+  +String basis
+  +String source_chunk_id
+}
+class PriorityDocketMatrix {
+  +Float score
+  +String tier
+  +Float custody_component
+  +Float pendency_component
+  +Float urgency_component
+  +String statutory_basis
+  +compute_priority_score()
+}
+class UndertrialAdvisory {
+  +String case_id
+  +Float detention_months
+  +Float statutory_max_months
+  +Float threshold_ratio
+  +Boolean is_eligible
+  +Boolean has_capital_offense_bar
+  +analyze_undertrial_eligibility()
+}
+RetrievedCandidate <|-- FusedCandidate : Merged via RRF
+LegalReasoningResponse *-- Claim : Contains
+PriorityDocketMatrix ..> UndertrialAdvisory : Incorporates BNSS §479 Rule
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: Architectural Invariants ── -->
+    <div class="uml-card">
+      <div class="uml-card-hdr">
+        <div class="uml-card-meta">
+          <span class="uml-badge">System Proofs</span>
+          <h3 class="uml-title">Core Architectural &amp; Statutory Invariants</h3>
+        </div>
+      </div>
+
+      <div class="doc-card" style="margin-top:14px; padding:22px;">
+        <h3>1. Anti-Hallucination Grounding Invariant</h3>
+        <p>Grounding confidence $C_{\text{prog}}$ is computed strictly deterministically over retrieval similarity $\bar{S}_{\text{retrieval}}$ and epistemically classified claims:</p>
+        <div class="formula f-gold" style="margin:14px 0;">
+          <div class="f-body">$$C_{\text{prog}} = \text{clamp}\left(0.50 \cdot \bar{S}_{\text{retrieval}} + 0.50 \cdot \frac{N_{\text{stated}} \cdot 1.0 + N_{\text{inferred}} \cdot 0.5 + N_{\text{insuff}} \cdot 0.0}{N_{\text{total}}}, [0.05, 0.99]\right)$$</div>
+          <div class="f-caption">Enforced in gemini_service.py · Verified claim bounds prevent synthetic hallucination</div>
+        </div>
+      </div>
+
+      <div class="f2col">
+        <div class="doc-card" style="margin-bottom:0; padding:20px;">
+          <h3 style="font-size:0.95rem;">2. Hybrid Search Invariant</h3>
+          <p style="font-size:0.85rem;">Lexical lookup (BM25 Okapi) and semantic vector search (Qdrant Cloud) are merged via Reciprocal Rank Fusion ($k=60$). Legal stopwords (<code>v</code>, <code>vs</code>, <code>section</code>, <code>act</code>, <code>order</code>, <code>bnss</code>) are strictly preserved during indexing.</p>
+        </div>
+        <div class="doc-card" style="margin-bottom:0; padding:20px;">
+          <h3 style="font-size:0.95rem;">3. Statutory Admissibility Invariant</h3>
+          <p style="font-size:0.85rem;">All digital evidence custody chain updates are hashed sequentially into an immutable SHA-256 block ledger. Hash verification and signing produce digitally verifiable certificates under Section 63(4) of Bharatiya Sakshya Adhiniyam, 2023.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VIEW: FULL COMPENDIUM
+     ═══════════════════════════════════════════ -->
+<section id="doc-view" class="view">
+  <div class="doc-wrap">
+    <div class="view-hdr">
+      <div class="view-h">NYAYA-TRIAGE Full Compendium</div>
+      <div class="view-p">Complete mathematical, algorithmic, and statutory reference consolidated for reading and printing.</div>
+    </div>
+    <div class="doc-card">
+      <h3>Document Architecture Overview</h3>
+      <p>This compendium defines the eight mathematical, algorithmic, and statutory formulations powering <strong>NYAYA-TRIAGE</strong>, developed for Smart India Hackathon 2026 (Problem Statement 190). The platform combines: deterministic AI grounding; sparse-dense hybrid retrieval via Reciprocal Rank Fusion ($k=60$); Okapi BM25 with preserved legal terminology; computational case-flow docket prioritisation ($P_{\text{docket}}$); statutory bail thresholds under BNSS §479; sentencing proportionality balancing ($\Delta S$) per the <em>Bachan Singh</em> doctrine; zero-trust spherical Haversine precinct geofencing ($R=1500\text{ m}$); and sequential SHA-256 cryptographic audit chaining compliant with BSA §63.</p>
+    </div>
+    <div class="doc-card">
+      <h3>Responsible Use &amp; Technical Principles</h3>
+      <div class="principles">
+        <div class="princ" style="border-left-color:var(--gold-500);"><strong>1. Codebase fidelity.</strong> All numerical weights, thresholds, and constants reflect exact formulas as deployed.</div>
+        <div class="princ" style="border-left-color:var(--ink-500);"><strong>2. Version control.</strong> Formulas are version-controlled alongside implementation code at every release.</div>
+        <div class="princ" style="border-left-color:var(--plum-500);"><strong>3. Statutory evolution.</strong> Rule encodings must be re-evaluated when governing statutes or judicial circulars change.</div>
+        <div class="princ" style="border-left-color:var(--emerald-500);"><strong>4. Decision-support boundary.</strong> Algorithmic outputs are decision-support signals — not autonomous legal determinations.</div>
+        <div class="princ" style="border-left-color:var(--ruby-500);"><strong>5. Mathematical scope.</strong> Confidence scores do not constitute legal guarantees or professional legal advice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

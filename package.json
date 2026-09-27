@@ -1,0 +1,14 @@
+{
+  "name": "nyaya-triage-formula-compendium",
+  "version": "1.0.0",
+  "description": "NYAYA-TRIAGE Mathematical, Algorithmic & Statutory Formula Compendium - Animated Interactive Frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npx -y serve ."
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
